@@ -16,12 +16,12 @@ const PeopleForm = ({ kisiler, submitFn }) => {
 
   return (
     <form className="taskForm" onSubmit={handleSubmit}>
-      <div className="form-line">
-        <label className="input-label" htmlFor="title">
+      <div className="pt-4">
+        <label className="text-sm" htmlFor="title">
           İsim
         </label>
         <input
-          className="input-text"
+          className="textBoxStyle"
           id="title"
           name="title"
           type="text"
@@ -33,7 +33,7 @@ const PeopleForm = ({ kisiler, submitFn }) => {
 
       <div className="form-line">
         <button
-          className="submit-button"
+          className="buttonStyle"
           type="submit"
           disabled={isim.length === 0 || kisiler.includes(isim)}
         >

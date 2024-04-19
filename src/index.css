@@ -1,20 +1,135 @@
-@import "reset.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  box-sizing: border-box;
+.task{
+    @apply bg-white shadow-md p-5 m-5 rounded-xl
+}
+.h2title{
+    @apply text-2xl font-bold mt-4 mb-2
+}
+.formstyle{
+    @apply p-8 border-b border-gray-300 
+}
+.ptStlye{
+    @apply pt-4
+}
+.headerStyle{
+    @apply block text-sm pb-1
+}
+.textBoxStyle{
+    @apply block w-full border border-gray-300 p-2 text-base leading-relaxed rounded-md
+}
+.descriptionStlye{
+    @apply text-sm block pb-6
+}
+.buttonStyle{ 
+    @apply bg-[#fecc91] hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-opacity-50 rounded-md shadow-md px-4 py-3 w-full
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: bisque;
+/* The `text-black-60` class does not exist. If `text-black-60` is a custom class, make sure it is defined within a `@layer` directive.*/
+.deadline{
+    @apply text-xs/[12px] py-4 
+}
+.deadline span {
+  @apply rounded-lg px-4 py-1
+}
+.pill{
+    @apply bg-white px-2 py-2 text-sm text-left inline-block mr-4 mb-6 border-solid shadow-lg rounded-full border-2
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.task button{
+@apply bg-amber-500 rounded-lg px-4 py-2 block ml-auto shadow-lg
 }
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+
+
+
+.columns {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 2rem 1.5rem;
+  gap: 2rem;
+  overflow: auto;
+}
+
+.column {
+  flex: 1;
+  min-width: 240px;
+  max-width: 360px;
+}
+
+.formColumn {
+  background-color: #fff;
+  flex: 0 0 360px;
+  border-right: 1px solid #f3d4b0;
+  overflow: auto;
+}
+
+.column-title {
+  font-size: 1.5rem;
+  padding-left: 0.75rem;
+}
+/* LAYOUT */
+
+/* TASK */
+
+
+.task h3 {
+  font-size: 18px;
+  color: #c8781a;
+}
+
+.task p {
+  padding: 0.5rem 0 0.75rem;
+  font-size: 14px;
+  color: #444;
+}
+
+
+
+
+
+
+
+.normal {
+  background-color: #ffd9d4;
+}
+.urgent {
+  background-color: #d4d7ff;
+}
+/* TASK */
+
+/* FORM */
+
+
+
+.form-line {
+  padding-top: 1rem;
+}
+
+
+
+
+.input-error {
+  font-size: 12px;
+  padding-top: 3px;
+  color: rgb(230, 43, 43);
+}
+
+
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+/* silinecek */
+

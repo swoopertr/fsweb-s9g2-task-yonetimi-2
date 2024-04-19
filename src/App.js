@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./app.css";
 import Task from "./Task";
 import TaskHookForm from "./TaskHookForm";
 import PeopleForm from "./PeopleForm";
@@ -30,14 +29,13 @@ function App() {
 
   return (
     <div className="app">
-      <div className="formColumn">
-        <div className="form-container">
-          <h2>Yeni Task</h2>
+      <div className="pl-2 mt-">
+        <div className="formstlye">
+          <h2 className="h2title" >Yeni Task</h2>
           <TaskHookForm kisiler={team} submitFn={handleTaskSubmit} />
         </div>
-
-        <div className="form-container">
-          <h2>Yeni Kişi</h2>
+        <div className="formstlye">
+          <h2 className="h2title" >Yeni Kişi</h2>
           <PeopleForm kisiler={team} submitFn={handlePeopleSubmit} />
         </div>
       </div>

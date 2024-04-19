@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export default function TaskHookForm({ kisiler, submitFn }) {
   const {
@@ -21,19 +21,18 @@ export default function TaskHookForm({ kisiler, submitFn }) {
     reset({
       title: "",
       description: "",
-      deadline: ""
+      deadline: "",
     });
   }
 
-
   return (
     <form className="taskForm" onSubmit={handleSubmit(mySubmit)}>
-      <div className="form-line">
-        <label className="input-label" htmlFor="title">
+      <div className="ptStlye">
+        <label className="headerStyle" htmlFor="title">
           Başlık
         </label>
         <input
-          className="input-text"
+          className="textBoxStyle"
           {...register("title", { required: "Task başlığı yazmalısınız" })}
           id="title"
           name="title"
@@ -42,12 +41,12 @@ export default function TaskHookForm({ kisiler, submitFn }) {
         {errors.title && <p className="input-error">{errors.title.message}</p>}
       </div>
 
-      <div className="form-line">
-        <label className="input-label" htmlFor="description">
+      <div className="ptStyle">
+        <label className="descriptionStlye" htmlFor="description">
           Açıklama
         </label>
         <textarea
-          className="input-textarea"
+          className="textBoxStyle"
           {...register("description", {
             required: "Task açıklaması yazmalısınız",
             minLength: {
@@ -64,12 +63,15 @@ export default function TaskHookForm({ kisiler, submitFn }) {
         )}
       </div>
 
-      <div className="form-line">
-        <label className="input-label">İnsanlar</label>
+      <div className="ptStlye">
+        <label className="text-sm block pb-6">İnsanlar</label>
         <div>
           {kisiler.map((p) => (
-            <label className="input-checkbox" key={p}>
-              <input
+            <label
+              className="text-base px-4 py-2 rounded-md border border-gray-300 mr-2 mb-2 inline-flex items-center cursor-pointer"
+              key={p}
+            >
+              <input className="mr-2"
                 {...register("people", {
                   required: "Lütfen en az 1 kişi seçin",
                   validate: {
@@ -90,23 +92,27 @@ export default function TaskHookForm({ kisiler, submitFn }) {
         )}
       </div>
 
-      <div className="form-line">
-        <label className="input-label" htmlFor="deadline">
+      <div className="pt-4">
+        <label className="descriptionStlye" htmlFor="deadline">
           Son teslim
         </label>
         <input
-          className="input-text"
-          {...register("deadline", { required: "Son teslim tarihi seçmelisiniz" })}
+          className="textBoxStyle"
+          {...register("deadline", {
+            required: "Son teslim tarihi seçmelisiniz",
+          })}
           id="deadline"
           name="deadline"
           type="date"
           min="2023-01-25"
         />
-        {errors.deadline && <p className="input-error">{errors.deadline.message}</p>}
+        {errors.deadline && (
+          <p className="input-error">{errors.deadline.message}</p>
+        )}
       </div>
 
-      <div className="form-line">
-        <button className="submit-button" type="submit" disabled={!isValid}>
+      <div className="pt-4">
+      <button class="buttonStyle">
           Kaydet
         </button>
       </div>
